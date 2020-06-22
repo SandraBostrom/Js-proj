@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/login.css" />
+</head>
+
+<body>
+    <div class="bg-img"></div>
+    <div class="content">
+        <div class="field">
+            <div id="login_div" class="main-div">
+                <input type="email" placeholder="Email..." id="email_field" />
+                <div>
+                    <div class="field space">
+
+                        <input type="password" placeholder="Password..." id="password_field" />
+                    </div>
+
+                    <button class="btn" onclick="login()">Logga in</button>
+                </div>
+                </form>
+            </div>
+                        </div>
+
+            <div id="user_div" class="loggedin-div">
+                
+                <h1 id="welcome">Välkommen</h1>
+                <button class="btn" onclick="logout()">Logga ut</button>
+                <button class="btn" onclick="redirect()">Börja</button>
+
+
+
+
+                <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+                <script>
+                    var config = {
+                        apiKey: "AIzaSyDcsVyWesi43BCU5vjZT9fjinJl0Qk4Zb8",
+                        authDomain: "sandra-projekt.firebaseapp.com",
+                        databaseURL: "https://sandra-projekt.firebaseio.com",
+                        projectId: "sandra-projekt",
+                        storageBucket: "sandra-projekt.appspot.com",
+                        messagingSenderId: "373199118381",
+                        appId: "1:373199118381:web:9ca064900c5000901f98a4",
+                        measurementId: "G-6JD4J8QSQB"
+                    };
+                    firebase.initializeApp(config);
+                </script>
+                <script src="js/login.js"></script>
+
+</body>
+
+</html>

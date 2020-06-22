@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Projekt</title>
+    <link rel="stylesheet" href="styles/addpet.css" />
+
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+
+        <button onclick="back()">Logga ut</button>
+
+        <div class="bg-img">
+            <h1>Adoptionsformulär</h1>
+            <div class="content">
+
+                <form id="adopt-form">
+                    <input type="text" id="name" name="name" placeholder="name">
+                    <input type="text" id="type" name="type" placeholder="type">
+                    <input type="hidden" id="petId" name="petId">
+                    <button class="btn" id="addPetButton">Lägg till</button>
+                </form>
+
+                <button onclick="updateFirebase()" class="btn" id="updatePetButton">Updatera</button>
+                <ul id="adopt-list"></ul>
+
+            </div>
+        </div>
+
+        <script>
+            var config = {
+                apiKey: "AIzaSyDcsVyWesi43BCU5vjZT9fjinJl0Qk4Zb8",
+                authDomain: "sandra-projekt.firebaseapp.com",
+                databaseURL: "https://sandra-projekt.firebaseio.com",
+                projectId: "sandra-projekt",
+                storageBucket: "sandra-projekt.appspot.com",
+                messagingSenderId: "373199118381",
+                appId: "1:373199118381:web:ed07d44315b75fda1f98a4",
+                measurementId: "G-KMMNFYRY54",
+            };
+
+            firebase.initializeApp(config);
+            const db = firebase.firestore();
+            db.settings({ timestampsInSnapshots: true });
+        </script>
+
+        <script src="js/addpet.js"></script>
+
+
+</body>
+
+</html>
